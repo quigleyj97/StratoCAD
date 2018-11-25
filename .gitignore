@@ -1,5 +1,9 @@
+# root
 /node_modules
-/lib
 /static
+
+# lerna
+/packages/**/lib
+/packages/**/node_modules
 
 yarn-error.log

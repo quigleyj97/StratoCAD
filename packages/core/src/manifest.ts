@@ -1,5 +1,5 @@
-import { StratoApp } from "./app/application";
-import { MainMenuPlugin } from "./mainmenu";
+import { StratoApp } from "@stratocad/application";
+import { MainMenuPlugin } from "@stratocad/mainmenu";
 
 export function registerPlugins(app: StratoApp) {
     app.registerPlugins([

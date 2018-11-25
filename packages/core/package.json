@@ -1,0 +1,16 @@
+{
+  "name": "@stratocad/core",
+  "version": "0.0.0",
+  "description": "Core metapackage for StratoCAD",
+  "main": "lib/index.js",
+  "author": "Joe Quigley",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "dependencies": {
+    "@stratocad/application": "0.0.0",
+    "@stratocad/mainmenu": "0.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

@@ -1,4 +1,4 @@
-import { IStratoPlugin } from "../interfaces/plugin";
+import { IStratoPlugin } from "@stratocad/application";
 import { MenuBar, Menu, Widget } from "@phosphor/widgets";
 
 export const MainMenuPlugin: IStratoPlugin<void> = {

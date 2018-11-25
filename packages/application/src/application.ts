@@ -1,4 +1,4 @@
-import { Application } from "@phosphor/application";
+import { Application, IPlugin } from "@phosphor/application";
 import { StratoCAD } from "./shell";
 
 export class StratoApp extends Application<StratoCAD> {
@@ -14,3 +14,5 @@ export class StratoApp extends Application<StratoCAD> {
         })
     }
 }
+
+export type IStratoPlugin<T> = IPlugin<StratoApp, T>;

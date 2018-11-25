@@ -11,9 +11,10 @@
     "outDir": "./lib",
     "strict": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true
   },
-  "files": [
+  "include": [
     "src/index.ts"
   ]
 }

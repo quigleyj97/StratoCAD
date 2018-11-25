@@ -1,0 +1,14 @@
+{
+  "name": "@stratocad/mainmenu",
+  "version": "0.0.0",
+  "description": "Main menu and toolbar for StratoCAD",
+  "main": "lib/index.js",
+  "author": "Joe Quigley",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@stratocad/application": "0.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

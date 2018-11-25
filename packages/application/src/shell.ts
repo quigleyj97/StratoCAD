@@ -1,8 +1,6 @@
 import { Widget, DockPanel, PanelLayout } from "@phosphor/widgets";
-import { IStratoCAD } from "../interfaces/shell";
-import "../../style/style.less";
 
-export class StratoCAD extends Widget implements IStratoCAD {
+export class StratoCAD extends Widget {
     public layout: PanelLayout;
     private dockPanel: DockPanel;
     private topWidget: Widget | null = null;
@@ -10,7 +8,7 @@ export class StratoCAD extends Widget implements IStratoCAD {
 
     constructor() {
         super();
-        this.addClass(IStratoCAD.APPLICATION_CLASS);
+        this.addClass(StratoCAD.APPLICATION_CLASS);
         this.layout = new PanelLayout();
         this.dockPanel = new DockPanel();
         this.layout.addWidget(this.dockPanel);
@@ -46,4 +44,8 @@ export class StratoCAD extends Widget implements IStratoCAD {
     public addDockWidget(widget: Widget, options?: DockPanel.IAddOptions) {
         this.dockPanel.addWidget(widget, options);
     }
+}
+
+export namespace StratoCAD {
+    export const APPLICATION_CLASS = "sp-ApplicationShell";
 }
