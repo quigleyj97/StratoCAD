@@ -1,0 +1,15 @@
+{
+  "name": "@stratocad/documents",
+  "version": "0.0.0",
+  "description": "Document manager for StratoCAD",
+  "main": "lib/index.js",
+  "author": "Joe Quigley",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@stratocad/application": "0.0.0"
+  }
+}

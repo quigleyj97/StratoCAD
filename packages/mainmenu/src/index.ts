@@ -19,7 +19,7 @@ export const MainMenuPlugin: IStratoPlugin<void> = {
             type: "separator"
         });
         file.addItem({
-            command: "file:close"
+            command: "docregistry:open"
         })
         menubar.addMenu(file);
         shell.setTopWidget(menubar);
