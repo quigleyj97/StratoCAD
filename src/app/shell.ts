@@ -32,6 +32,7 @@ export class StratoCAD extends Widget implements IStratoCAD {
         }
         this.topWidget = widget;
         this.layout.insertWidget(0, widget);
+        this.dockPanel.update();
     }
 
     public setBottomWidget(widget: Widget) {
