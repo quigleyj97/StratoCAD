@@ -47,5 +47,5 @@ export class StratoCAD extends Widget {
 }
 
 export namespace StratoCAD {
-    export const APPLICATION_CLASS = "sp-ApplicationShell";
+    export const APPLICATION_CLASS = "sc-ApplicationShell";
 }
