@@ -6,7 +6,8 @@
   "author": "Joe Quigley",
   "license": "BSD-3-Clause",
   "scripts": {
-    "build": "tsc",
+    "build": "lerna run --parallel build",
+    "build:watch": "lerna run --parallel build:watch",
     "lint": "tslint",
     "start": "webpack-dev-server"
   },

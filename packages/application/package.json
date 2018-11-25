@@ -6,6 +6,7 @@
   "author": "Joe Quigley",
   "license": "BSD-3-Clause",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   }
 }

@@ -9,6 +9,7 @@
     "@stratocad/application": "0.0.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   }
 }
