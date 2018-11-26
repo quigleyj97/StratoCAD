@@ -13,6 +13,11 @@ export class StratoApp extends Application<StratoCAD> {
             execute: () => console.log("unopen")
         })
     }
+
+    public registerPlugin(plugin: IPlugin<this, any>) {
+        super.registerPlugin(plugin);
+        console.log("Loaded plugin", plugin.id || "<ambient>");
+    }
 }
 
 export type IStratoPlugin<T> = IPlugin<StratoApp, T>;
