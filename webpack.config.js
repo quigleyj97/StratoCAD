@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -34,6 +35,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "StratoCAD",
-        })
+        }),
+        new MonacoWebpackPlugin()
     ]
 };

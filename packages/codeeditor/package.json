@@ -1,16 +1,14 @@
 {
-  "name": "@stratocad/core",
+  "name": "@stratocad/codeeditor",
   "version": "0.0.0",
-  "description": "Core metapackage for StratoCAD",
+  "description": "Code editor for StratoCAD",
   "main": "lib/index.js",
   "author": "Joe Quigley",
   "license": "BSD-3-Clause",
-  "private": true,
   "dependencies": {
     "@stratocad/application": "0.0.0",
-    "@stratocad/mainmenu": "0.0.0",
     "@stratocad/documents": "0.0.0",
-    "@stratocad/codeeditor": "0.0.0"
+    "monaco-editor": "^0.15.6"
   },
   "scripts": {
     "build": "tsc",
