@@ -5,7 +5,8 @@ import { TextModel } from "./models/text";
 import { DocumentRegistry } from "./registry";
 import { DocumentWidget } from "./widget";
 
-const IDocumentRegistry = new Token<DocumentRegistry>("@stratocad/documents:docregistry")
+export const IDocumentRegistry = new Token<DocumentRegistry>("@stratocad/documents:docregistry")
+export type IDocumentRegistry = DocumentRegistry;
 
 export namespace DocRegistryCommands {
     export const Open = "docregistry:open";
@@ -31,7 +32,7 @@ export const DocRegistryPlugin: IStratoPlugin<DocumentRegistry> = {
             execute: (args) => {
                 const data = "Hello I am some text";
                 const model = registry.createModel(data, "text");
-                const widget = registry.createWidget(model, "text");
+                const widget = registry.createWidget(model, "editor");
                 shell.addDockWidget(widget);
                 widget.update();
             }

@@ -19,11 +19,14 @@ export class DocumentWidget<_Model extends DocumentModel<any>> extends Widget {
         this.model = model;
     }
 
-    protected onUpdateRequest() {
-        console.log("Hello, world!");
-        console.log(this.model.content);
-        this.node.innerText = ""+this.model.content;
-    }
+    /**
+     * A function that will get called by the StratoCAD framework whenever the
+     * value of the model updates.
+     * 
+     * It will ignore updates where the senderId is equal to the DocumentWidget's
+     * `id`.
+     */
+    public onDidUpdateContent() { }
 }
 
 export namespace DocumentWidget {

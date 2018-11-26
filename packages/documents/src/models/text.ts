@@ -12,7 +12,10 @@ export class TextModel extends DocumentModel<string> {
         return this.content;
     }
 
-    public setText(newText: string) {
-        this.setContent(newText);
+    public setText(newText: string, parentId?: string) {
+        if (newText === this.content) {
+            return;
+        }
+        this.setContent(newText, parentId);
     }
 }

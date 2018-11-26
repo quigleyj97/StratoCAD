@@ -18,7 +18,7 @@ import { JSONValue } from "@phosphor/coreutils";
  */
 export abstract class DocumentModel<_ModelType> implements IDisposable {
     private _onDirty = new Signal<this, void>(this);
-    private _onUpdate = new Signal<this, void>(this);
+    private _onUpdate = new Signal<this, string>(this);
     private _isDirty = false;
     private _isDisposed = false;
     private _content: _ModelType | null = null;
@@ -29,14 +29,17 @@ export abstract class DocumentModel<_ModelType> implements IDisposable {
      * and does not emit again until the changes have been saved.
      */
     public get onDirty(): ISignal<this, void> { return this._onDirty; }
-    /** A signal that emits whenever the content of the model changes. */
-    public get onUpdate(): ISignal<this, void> { return this._onUpdate; }
+    /** A signal that emits whenever the content of the model changes.
+     * The argument is a unique ID that is used to refer to the setter.
+     * @see setContent
+     */
+    public get onUpdate(): ISignal<this, string> { return this._onUpdate; }
     /** Whether changes to this document model have been persisted */
     public get isDirty() { return this._isDirty; }
     /** Whether this model has been disposed */
     public get isDisposed() { return this._isDisposed; }
     /** Return the content of this model */
-    public get content(): Readonly<_ModelType> | null { return this._content; }
+    public get content(): _ModelType | null { return this._content; }
 
     public dispose() {
         if (this._isDisposed) {
@@ -68,8 +71,14 @@ export abstract class DocumentModel<_ModelType> implements IDisposable {
      * This should not be called by model consumers. Instead, subclassers should
      * provide more appropriate methods that will update the model and call this
      * method.
+     * 
+     * parentId is an ID that is used to refer back to the caller of setContent.
+     * This is useful when you want to bind the value of a model to a view with
+     * complex state that would be clobbered by 'caveman' binding (such as a
+     * React widget). It is optional, and if not provided it will be coerced to
+     * the empty string.
     */
-    protected setContent(newContent: _ModelType) {
+    protected setContent(newContent: _ModelType, parentId?: string) {
         if (this._isDisposed) {
             throw Error("Model disposed");
         }
@@ -78,7 +87,7 @@ export abstract class DocumentModel<_ModelType> implements IDisposable {
             this._isDirty = true;
             this._onDirty.emit(void 0);
         }
-        this._onUpdate.emit(void 0);
+        this._onUpdate.emit(parentId || "");
     }
 }
 
