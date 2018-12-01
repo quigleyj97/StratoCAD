@@ -1,0 +1,10 @@
+{
+    "files": [],
+    "references": [
+        {"path": "./packages/application"},
+        {"path": "./packages/codeeditor"},
+        {"path": "./packages/core"},
+        {"path": "./packages/documents"},
+        {"path": "./packages/mainmenu"}
+    ]
+}
