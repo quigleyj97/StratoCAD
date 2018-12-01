@@ -19,8 +19,15 @@ them is not.
 
 ## Building
 
+The steps below use Yarn, but they should also work with NPM.
+
 ```bash
 yarn install
 yarn build
-yarn run
+```
+
+## Running
+
+```bash
+yarn start
 ```
