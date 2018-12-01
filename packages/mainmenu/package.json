@@ -6,10 +6,7 @@
   "author": "Joe Quigley",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@phosphor/widgets": "^1.6.0",
     "@stratocad/application": "0.0.0"
-  },
-  "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch"
   }
 }
